@@ -1,0 +1,27 @@
+{
+  "name": "hotels-api",
+  "version": "0.1.0",
+  "description": "Backend of Hotels API using node, mongo and graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmiloarguello/hotel-api.git"
+  },
+  "keywords": [
+    "hotel",
+    "graphql",
+    "mongodb"
+  ],
+  "author": "Camilo Arguello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmiloarguello/hotel-api/issues"
+  },
+  "homepage": "https://github.com/kmiloarguello/hotel-api#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
