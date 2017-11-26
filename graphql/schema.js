@@ -8,20 +8,33 @@ const typeDefs = `
         price:String
     }
 
+    input HotelInput{
+        name:String
+        stars:Int
+        price:String
+    }
+    
     type Query{
-        allHotels: [Hotel] 
+        allHotels: [Hotel]
+        hotelByName(name: String): Hotel
+    }
+
+    type Mutation{
+        registerHotel(input: HotelInput): Hotel
     }
 `
     const resolvers = {
         Query: {
-            allHotels: () => {
-                return [{
-                    id: 1,
-                    name: "Forrest Gump",
-                    stars: 5,
-                    price:"12.000"
-
-                }]
+            allHotels: async(parent,args,{HotelSchema}) => {
+                return await HotelSchema.find();
+            },
+            hotelByName: async(parent, args, {HotelSchema}) => {
+                return await HotelSchema.findOne({name: args.name})
+            }
+        },
+        Mutation:{
+            registerHotel: async (parent, args, {HotelSchema}) => {
+                return HotelSchema.create(args.input)
             }
         }    
     }
