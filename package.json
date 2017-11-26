@@ -4,7 +4,8 @@
   "description": "Backend of Hotels API using node, mongo and graphql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,14 @@
   },
   "homepage": "https://github.com/kmiloarguello/hotel-api#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "dev": "^0.1.3",
+    "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "graphql-server-express": "^1.2.0",
+    "graphql-tools": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
