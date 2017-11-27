@@ -57,6 +57,85 @@ type Hotel{
 ```
 Si te fijas en la estructura existe un `id` el cual debe estar presente en todos los `queries` que se creen. Y además, se crea una estructura conformada por `name` que recibe un type String,`stars` que recibe un type Int, `image` que recibe otro String, y `price` con otro String.
 
+Para el API se crearon Mutaciones para poder crear la información y guardarla con `Mongoose`.
+
+Para esto creamos un modelo de esquema de Mongoose, el cual debe recibir los datos y con el cual, Graphql se va a comunicar después.
+
+```
+...
+const HotelSchema = mongoose.Schema({
+    name: {
+        type: String,
+        unique: true
+    },
+    stars:Number,
+    image:String,
+    price:String
+});
+...
+
+```
+Si te fijas, maneja la misma estructura del esquema de Graphql. Ahora bien, las mutaciones se conectan a Mongoose para poder crear la nueva información, para esto se define el siguiente esquema:
+
+```
+input HotelInput{
+        name:String
+        stars:Int
+        image:String
+        price:String
+}
+...
+type Mutation{
+   registerHotel(input: HotelInput): Hotel
+}
+
+```
+## Get Data
+
+Para interactuar con el API, debes dirigirte a `http://localhost:3000/graphql` y allí podrás ver la interfaz creada por el package `graphql-tools` el cual nos sirve para testear nuestra API.
+
+En esa interfaz puedes escribir los siguientes comandos:
+
+**Ejemplo 1:** Si quieres recibir la lista completa de hoteles
+
+```
+{
+  allHotels
+}
+```
+Y le das al boton de "Play". Inmediatamente Graphql te retorna el id de lo que llamaste.
+
+```
+{
+  allHotels{
+  id
+}
+```
+La ventaja sobre API REST es que podemos hacer varios llamados en uno solo. Por ejemplo si quisieras llamar el nombre de todos los hoteles debes escribir lo siguiente:
+```
+{
+  allHotels{
+  name
+}
+```
+
+**Ejemplo 2:** Si quieres recibir un hotel en especial
+
+Puedes llamar un Hotel si le pasas el nombre como parámetro al query. Por ejemplo.
+
+```
+{
+  hotelByName(name: "Saint Simon") {
+    id
+    name
+    stars
+    image
+    price
+  }
+}
+
+```
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
