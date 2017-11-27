@@ -6,6 +6,7 @@ const HotelSchema = mongoose.Schema({
         unique: true
     },
     stars:Number,
+    image:String,
     price:String
 });
 

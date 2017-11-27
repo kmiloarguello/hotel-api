@@ -5,12 +5,14 @@ const typeDefs = `
         id:ID!
         name:String
         stars:Int
+        image:String
         price:String
     }
 
     input HotelInput{
         name:String
         stars:Int
+        image:String
         price:String
     }
     
