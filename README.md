@@ -92,7 +92,7 @@ type Mutation{
 ```
 ## Get Data
 
-Para interactuar con el API, debes dirigirte a `http://localhost:3000/graphql` y allí podrás ver la interfaz creada por el package `graphql-tools` el cual nos sirve para testear nuestra API.
+Para interactuar con el API, debes dirigirte a `http://localhost:3000/graphiql` y allí podrás ver la interfaz creada por el package `graphql-tools` el cual nos sirve para testear nuestra API.
 
 En esa interfaz puedes escribir los siguientes comandos:
 
@@ -141,6 +141,9 @@ Devuelve un Hotel con los parametros de Saint Simon
 ## Deployment
 
 El proyecto esta desplegado en Heroku. Y con una base de datos en mLab.
+```
+http://hotel-api-km.herokuapp.com/graphiql
+```
 
 ## Authors
 
