@@ -147,9 +147,7 @@ http://hotel-api-km.herokuapp.com/graphiql
 
 ## Authors
 
-* **CAMILO ARGUELLO** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **CAMILO ARGUELLO** - *Initial work* - [Camilo Arguello](https://github.com/kmiloarguello)
 
 ## License
 
